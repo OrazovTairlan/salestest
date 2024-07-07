@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./assets/styles/normalize.css"/>
+    <link rel="stylesheet" href="./assets/styles/styles.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.1.0/build/css/intlTelInput.css">
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.1.0/build/js/intlTelInput.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+<div class="page">
+    <main class="main">
+        <form action="" class="form" id="jobForm">
+            <div class="row row--center">
+                <!-- Client details -->
+                <div class="card card__client-details">
+                    <div class="card__content">
+                        <h2 class="card__headline">Client details</h2>
+                        <div class="row mb">
+                            <div class="card__firstName card__field">
+                                <div class="input-field input-field--layout">
+                                    <input class="input-field__input field field--hover card__firstName-input"
+                                           placeholder="First name" type="text"
+                                           name="first_name" id="first_name" required/>
+                                </div>
+                            </div>
+
+                            <div class="card__lastName card__field">
+                                <div class="input-field input-field--layout">
+                                    <input class="input-field__input field field--hover card__lastName-input"
+                                           placeholder="Last name" type="text"
+                                           name="last_name" id="last_name" required/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__phone card__field mb">
+                            <div class="input-field input-field--layout">
+                                <input class="input-field__input field field--hover card__phone-input"
+                                       placeholder="Phone" type="tel"
+                                       name="phone" id="phone" required/>
+                            </div>
+                        </div>
+                        <div class="card__email card__field">
+                            <div class="input-field input-field--layout">
+                                <input class="input-field__input field field--hover card__email-input"
+                                       placeholder="Email (optional)" type="email"
+                                       name="email" id="email"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
+
+                <!-- Job details -->
+                <div class="card card__job-details">
+                    <div class="card__content">
+                        <h2 class="card__headline">Job details</h2>
+                        <div class="row mb">
+                            <div class="card__job card__field field-wrapper">
+                                <div class="select-field select-field--layout">
+                                    <select name="job_type" required class="select-field__select field card__job-select"
+                                            id="job_type">
+                                        <option value="" disabled selected>Job type</option>
+                                        <option value="test">Job</option>
+                                    </select>
+                                    <label for="job_type">
+                                        <div class="icon icon--end">
+                                            <div class="divider divider--vertical"></div>
+                                            <i class="fa-solid fa-arrow-down"></i>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="card__job-source card-field field-wrapper">
+                                <div class="select-field select-field--layout">
+                                    <select name="job_source" required
+                                            class="select-field__select field card__job-source-select" id="job_source">
+                                        <option value="" disabled selected>Job source</option>
+                                        <option value="job_source">Source example</option>
+                                    </select>
+                                    <label for="job_source">
+                                        <div class="icon icon--end">
+                                            <div class="divider divider--vertical"></div>
+                                            <i class="fa-solid fa-arrow-down"></i>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__job-description full-height card-field">
+                            <div class="input-field full-height input-field--layout">
+                                    <textarea
+                                            class="input-field__input full-height field field--hover card__job-description-textarea"
+                                            placeholder="Job (optional)"
+                                            name="job_description" id="job"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
+            </div>
+            <div class="row row--center">
+                <!-- Service location -->
+                <div class="card card__service-location">
+                    <div class="card__content">
+                        <h2 class="card__headline">Service location</h2>
+                        <div class="card__address">
+                            <div class="input-field input-field--layout">
+                                <input class="input-field__input field field--hover card__address-input"
+                                       placeholder="Address" type="text"
+                                       name="address" id="address" required/>
+                            </div>
+                        </div>
+
+                        <div class="card__city">
+                            <div class="input-field input-field--layout">
+                                <input class="input-field__input field field--hover card__city-input"
+                                       placeholder="City" type="text"
+                                       name="city" id="city" required/>
+                            </div>
+                        </div>
+
+                        <div class="card__state">
+                            <div class="input-field input-field--layout">
+                                <input class="input-field__input field field--hover card__state-input"
+                                       placeholder="State" type="text"
+                                       name="state" id="state" required/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="card__zip">
+                                <div class="input-field input-field--layout">
+                                    <input class="input-field__input field field--hover card__zip-input"
+                                           placeholder="Zip" type="text"
+                                           name="zip" id="zip" pattern="\d{5}" title="Zip code should be 5 digits"
+                                           required/>
+                                </div>
+                            </div>
+                            <div class="card__area field-wrapper">
+                                <div class="select-field select-field--layout">
+                                    <select name="area" required class="select-field__select field card__area-select"
+                                            id="area">
+                                        <option value="" disabled selected>Area</option>
+                                        <option value="Area example">Area example</option>
+                                    </select>
+                                    <label for="area">
+                                        <div class="icon icon--end">
+                                            <div class="divider divider--vertical"></div>
+                                            <i class="fa-solid fa-arrow-down"></i>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
+
+                <!-- Schedule -->
+                <div class="card">
+                    <div class="card__content">
+                        <h2 class="card__headline">Scheduled</h2>
+                        <div class="card__date field-wrapper">
+                            <div class="select-field select-field--layout">
+                                <input class="input-field__input field field--hover card__date-input"
+                                       placeholder="DD/MM/YYYY" type="date"
+                                       name="date" id="date" required/>
+                                <label for="date">
+                                    <div class="icon icon--end">
+                                        <i class="fa-regular fa-calendar"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="card__start field-wrapper">
+                                <div class="select-field select-field--layout">
+                                    <input class="input-field__input field field--hover card__start-input"
+                                           placeholder="" type="time"
+                                           name="start_date" id="start_date" required/>
+                                    <label for="start_date">
+                                        <div class="icon icon--end">
+                                            <i class="fa-regular fa-clock"></i>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="card__end field-wrapper">
+                                <div class="select-field select-field--layout">
+                                    <input class="input-field__input field field--hover card__end-input"
+                                           placeholder="" type="time"
+                                           name="end__date" id="end__date" required/>
+                                    <label for="end__date">
+                                        <div class="icon icon--end">
+                                            <i class="fa-regular fa-clock"></i>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__test field-wrapper">
+                            <div class="select-field select-field--layout">
+                                <select name="test" required class="select-field__select field card__test-select"
+                                        id="test">
+                                    <option value="" disabled selected>Job type</option>
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="mercedes">Mercedes</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                                <label for="test">
+                                    <div class="icon icon--end">
+                                        <div class="divider divider--vertical"></div>
+                                        <i class="fa-solid fa-arrow-down"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
+            </div>
+            <div class="row row--center form__actions">
+                <button class="btn form__actions-submit btn--rounded btn--primary" type="submit">
+                    Create job
+                </button>
+                <button class="btn btn--rounded btn--secondary" type="button">
+                    Save info
+                </button>
+            </div>
+        </form>
+        <div class="main__process none">
+            <div class="process-information">
+                <h2 class="process-information__headline">
+                    Job is created!
+                </h2>
+                <p class="process-information__text">View Deal</p>
+                <a href="#" class="process-information__link">View in Workiz</a>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<script src="./assets/scripts/main.js"/>
+</body>
+</html>
